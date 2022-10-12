@@ -1,0 +1,19 @@
+.font-size{
+    font-size: 30px;
+}
+
+.font20{
+    font-size: 20px;
+}
+
+.gap30{
+    gap:30px;
+}
+
+button{
+    width: 100px;
+}
+
+.font-bold{
+    font-weight: bold;
+}

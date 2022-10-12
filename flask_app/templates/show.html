@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="text-center">Welcome {{user.first_name}} !!!</h1>
+    <main class="px-5">
+        <div class="d-flex justify-content-between">
+            <p class="font-size">All posted recipes:</p>
+            <div class="d-flex gap-3">
+                <a href="/dashboard" class="btn btn-primary mx-3 text-white">Back to recipe</a>
+                <a href="/logout" class="btn btn-primary mx-3 text-white">Logout</a>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-between">
+            <p class="font-size font-bold">{{recipe.name}}</p>
+            <p class="font20">Posted by: {{ user_recipe.first_name }}</p>
+        </div>
+        <div class="card">
+            <label>Description: </label>
+            <p> {{ recipe.description }}</p>
+
+            <label>Under 30 Minutes?</label>
+            <p> 
+                {% if recipe.is_under_thirty == 1 %}
+                    Yes
+                {% else %}
+                    No
+                {% endif %}
+            </p>
+
+            <label>Instructions:</label>
+            <p>{{ recipe.instruction }}</p>
+
+            <label>Date Made:</label>
+            <p>{{ recipe.date_cooked }}</p>
+
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
